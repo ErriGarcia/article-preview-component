@@ -1,0 +1,269 @@
+/*
+** Layout: 
+** - Mobile: 375px
+** - Desktop: 1440px
+*/
+
+:root {
+    --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --color-grayish-blue: hsl(212, 23%, 69%);
+    
+    --color-light-grayish-blue: hsl(210, 46%, 95%);
+
+    --font-size-13-px: 13px;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+/*
+** Weights: 500, 700
+*/
+    --font-family-manrope:'Manrope', sans-serif;
+  }
+  
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.article-background {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-card {
+    width: 320px;
+    background-color: white;
+    font-family: var(--font-family-manrope);
+    font-size: var(--font-size-13-px);
+    border-radius: 1rem;
+}
+
+.article-main-img {
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.article-description {
+    margin-top: 2rem;
+}
+
+.article-title {
+    color: var(--color-very-dark-grayish-blue);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 2rem;
+}
+
+.article-paragraph {
+    color: var(--color-desaturated-dark-blue);
+    line-height: 1.2rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
+}
+
+.rectangle {
+    display: none;
+}
+
+/* START */
+/* -------------Active/Share state------------- */
+
+.article-share-state {
+    background-color: var(--color-very-dark-grayish-blue);
+    margin-top: 1.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-share-title {
+    text-transform: uppercase;
+    color: var(--color-grayish-blue);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-500);
+    letter-spacing: 0.4rem;
+}
+
+.article-share-icons {
+    margin-left: 1.2rem;
+    margin-right: 2.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.article-button-share-background-active {
+    background: var(--color-desaturated-dark-blue);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 0rem;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-button-share-active {
+    filter: brightness(0) invert(1);
+}
+
+/* END */
+
+
+/* START */
+/* -----------STATIC state------------- */
+
+.article-author-details {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem 1rem;
+}
+
+.article-author-img {
+    border-radius: 10rem;
+    width: 16%;
+}
+
+.article-author-name-date {
+    margin-left: 1rem;
+    margin-right: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article-author-name {
+    color: var(--color-desaturated-dark-blue);
+}
+
+.article-author-date {
+    color: var(--color-grayish-blue);
+    font-weight: var(--font-weight-500);
+    font-size: var(--font-size-13-px);
+}
+
+.article-button-share-background {
+    background-color: var(--color-light-grayish-blue);
+    border-radius: 100%;
+    width: 48px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.article-button-share {
+    cursor: pointer;
+}
+
+/* END */
+
+/* DESKTOP VERSION */
+
+@media screen and (min-width: 900px) {
+
+    .article-card {
+        width: 700px;
+        display: flex;
+        box-shadow: 0px 10px 10px 0px hsl(214deg 17% 80%);
+    }
+
+    .article-main-img {
+        width: 40%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-top-right-radius: 0;
+    }
+
+    .article-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .article-title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+    .article-author-img {
+        width: 3rem;
+    }
+
+    .article-author-name-date {
+        display: flex;
+        flex-flow: column;
+        margin-right: 9rem;
+    }
+
+    .article-button-share-background {
+        width: 32px;
+        height: 32px;
+    }
+
+/* -------------Active/Share state------------- */
+
+.article-author-details {
+    display: flex;
+}
+
+/* ------------- Hover state ------------- */
+
+.rectangle {
+    background-color: var(--color-very-dark-grayish-blue);
+    position: absolute;
+    top: 25.5rem;
+    left: 55.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 16rem;
+    height: 3.4rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.article-share-icons{
+    margin: 0;
+}
+
+.triangle {
+    width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--color-very-dark-grayish-blue) transparent;
+    margin-left: 15px;
+    transform: rotate(180deg);
+    position: relative;
+    top: 2rem;
+    left: -6rem;
+}
+}
+
+.display-none {
+    display: none;
+}
